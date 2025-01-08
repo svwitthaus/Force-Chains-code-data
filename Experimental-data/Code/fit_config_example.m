@@ -46,25 +46,3 @@ for nf=90:Nf
         fchi07(X0,mn,im,rp,mask,true);
     end
 end
-
-%% plot
-time = (1:Nf);
-F=abs(X(1:end,2));
-ii=F>0;
-%%
-yyaxis left
-plot(time(ii), abs(X(ii, 2))*6.9784/678.875, 'Linewidth', 3)
-xlabel('Time [s]')
-ylabel('Force [N]')
-yyaxis right
-
-plot(data(1:end, 1), data(1:end, 3), 'Linewidth', 3)
-%legend
-ylabel('Input Force [N]')
-set(gca, 'Fontsize', 12)
-
-%%
-figure
-plot(data(4503-200:50:end, 3), abs(X(ii, 2))*6.85/945.5, 'Linewidth', 3)
-xlabel('Input Force [N]')
-ylabel('Output Force [N]')
